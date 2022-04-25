@@ -1,0 +1,16 @@
+services:
+#    legrain_api.example:
+#        class: Legrain\ApiBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+     check_service:
+         class: Legrain\ApiBundle\Services\CheckService
+         arguments: [ "@doctrine.orm.entity_manager"]
+     gandi_service:
+         class: Legrain\ApiBundle\Services\GandiService
+         arguments: [ "@doctrine.orm.entity_manager"]
+     security_service:
+         class: Legrain\ApiBundle\Services\GwiHostingSecurityService
+         arguments: [ "@doctrine.orm.entity_manager","@logger"]
+     gwi_hosting_service:
+         class: Legrain\ApiBundle\Services\GwiHostingService
+         arguments: [ "@doctrine.orm.entity_manager","@tools.math",'@tools.curlbugzilla',"@logger","@mailer","@templating","%email_app%","%stripe_key%","%id_changelog_gwi%","%id_changelog_gwi_utilisateur_agence_web%","%wsdl_changelog%","%identifiant_gandi_admin%","%identifiant_gandi_bill%","%identifiant_gandi_tech%","%email_gandi_per_default%","%email_notification_paiement%","%email_notification_inscription%"]

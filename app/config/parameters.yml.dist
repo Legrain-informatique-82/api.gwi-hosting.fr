@@ -1,0 +1,44 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# http://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+    # You should uncomment this if you want use pdo_sqlite
+    # database_path: "%kernel.root_dir%/data.db3"
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    # A secret key that's used to generate certain security-related tokens
+    secret:            ThisTokenIsNotSoSecretChangeIt
+    email_app: thisIsNoEmailChangeIt
+
+    # paypal sandbox
+    stripe_key:   sk_test_gSTXDQxFFZiiBdKOGlrcLZWh
+    bugzilla.url: http://bugs.legrain.fr
+    bugzilla.api_key: EBOZdqweChj2bldktO2XDGGYcOUXapdfR25T5v3a
+
+
+    #Ids changelog
+    id_changelog_gwi: 8
+    id_changelog_gwi_agence_web: 9
+    id_changelog_gwi_utilisateur_agence_web: 10
+
+    #email par defaut des contacts gandi
+    email_gandi_per_default: gweb@legrain.biz
+
+    #identifiants gandi par défaut
+    identifiant_gandi_admin: GI47-GANDI
+    identifiant_gandi_bill: GI47-GANDI
+    identifiant_gandi_tech: GI47-GANDI
+
+    #wsdl changelog legrain
+    wsdl_changelog: http://changelog.legrain.fr/ws/changelogApi
+    email_notification_paiement: paiement@gwi-hosting.fr
+    email_notification_inscription: gweb@legrain.fr

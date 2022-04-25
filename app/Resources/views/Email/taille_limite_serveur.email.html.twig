@@ -1,0 +1,41 @@
+<html>
+<head>
+
+</head>
+<body>
+<p>Bonjour {{ instance.user.name }},</p>
+
+<p>
+    Ceci est un mail automatique pour vous prévenir que votre serveur {{ instance.name }} est arrivé à {{ percent }}% de sa capacité totale de stockage.<br/>
+    Pour que votre serveur fonctionne correctement, vous devez laisser environ 10% d'espace disponible.<br/>
+    Nous vous conseillons :
+</p>
+<ul>
+    <li>Soit de libérer de la place sur le serveur</li>
+    <li>Soit, d'ajouter de l'espace de stockage sur votre serveur</li>
+</ul>
+<p>
+    N'hésitez pas à contacter notre service client en cas de problème ou
+    pour toute autre question.
+    <br/>
+
+    {{ agency.name }}<br/>
+    {{ agency.address1 }}<br/>
+    {% if agency.address2%}{{ agency.address1 }}<br/>{% endif %}
+    {% if agency.address3%}{{ agency.address3 }}<br/>{% endif %}
+    {{ agency.zipCode.name }} {{ agency.city.name }}<br/>
+
+
+    Tél : {{ agency.phone }}<br/>
+    E-mail : {{ agency.email }}<br/>
+    <br/>
+    {{ agency.name }} vous remercie de votre confiance.
+</p>
+<p>
+    Cordialement,
+    <br/>
+    Service Client
+</p>
+
+</body>
+</html>

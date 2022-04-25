@@ -1,0 +1,62 @@
+<html>
+<head>
+
+</head>
+<body>
+<p>Bonjour {{ user.firstname }} {{ user.name }},<br/>
+    Nous vous informons que certain(s) de vos services vont arriver à échéances d'ici peu.
+    <br/>
+    Pour les renouveler, il vous suffit de vous rendre sur votre interface Gwi-Hosting à l'adresse <a href="{{ agency.urlApp }}">{{ agency.urlApp }}</a>.
+
+</p>
+<p>
+    Votre login est {{ user.email }}.<br/>
+    Vous avez déjà reçu votre mot de passe. Si vous l'avez perdu, il pourra vous être renvoyé en cliquant sur le lien suivant : <a href="{{ agency.urlApp }}/private/password-forgotten">{{ agency.urlApp }}/private/password-forgotten</a>.
+</p>
+<p>
+    Liste de vos abonnements se terminant d'ici le {{ date | date('d/m/Y') }}
+
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th>Nom</th>
+        <th>Date de fin</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for abo in abos  %}
+        <tr>
+            <td>{{ abo.type }}</td>
+            <td>{{ abo.name }}</td>
+            <td>{{ abo.date | date('d/m/Y') }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+<p>Si vous n'etes pas concerné par ce mail, ou si vous avez des questions, vous pouvez contacter votre prestataire WEB :
+    <br/>
+    {{ agency.name }}<br/>
+    {{ agency.address1 }}<br/>
+    {% if agency.address2%}{{ agency.address1 }}<br/>{% endif %}
+    {% if agency.address3%}{{ agency.address3 }}<br/>{% endif %}
+    {{ agency.zipCode.name }} {{ agency.city.name }}<br/>
+
+
+    Tél : {{ agency.phone }}<br/>
+    E-mail : {{ agency.email }}<br/>
+    <br/>
+    {{ agency.name }} vous remercie de votre confiance.
+</p>
+<p>
+    Cordialement,
+    <br/>
+    Service Client
+</p>
+
+
+</body>
+</html>

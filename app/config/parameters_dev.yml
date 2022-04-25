@@ -1,0 +1,4 @@
+parameters:
+    stripe_key: sk_test_gSTXDQxFFZiiBdKOGlrcLZWh
+    email_notification_paiement: julien@legrain.fr
+

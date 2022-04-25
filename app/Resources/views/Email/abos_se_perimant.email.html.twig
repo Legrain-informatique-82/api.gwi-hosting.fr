@@ -1,0 +1,27 @@
+<html>
+<head>
+
+</head>
+<body>
+<div>
+<table>
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Date de fin</th>
+        <th>E-mail utilisateur</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for abo in abos  %}
+        <tr>
+            <td>{{ abo.name }}</td>
+            <td>{{ abo.date | date('d/m/Y') }}</td>
+            <td>{{ abo.userEmail }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+legrain_api_homepage:
+    path:     /
+    defaults: { _controller: LegrainApiBundle:Default:index }
+# Acme/ApiBundle/Resources/config/routing.yml
+legrain_api_soap_check:
+    path: /soap/check
+    defaults: { _controller: LegrainApiBundle:Soap:check }
+
+legrain_api_soap_gandi:
+    path: /soap/gandi
+    defaults: { _controller: LegrainApiBundle:SoapLiteral:gandi }
+legrain_api_soap_gwi_hosting_security:
+    path: /soap/gwiHostingSecurity
+    defaults: { _controller: LegrainApiBundle:SoapRcp:userSecurity }
+legrain_api_soap_gwi_hosting:
+    path: /soap/gwiHosting
+    defaults: { _controller: LegrainApiBundle:SoapRcp:gwiHosting }

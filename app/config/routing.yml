@@ -1,0 +1,22 @@
+legrain_api:
+    resource: "@LegrainApiBundle/Resources/config/routing.yml"
+    prefix:   /
+
+legrain_tools:
+    resource: "@LegrainToolsBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+gandi:
+    resource: "@GandiBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+# app/config/routing.yml
+acme_api:
+    resource: "@LegrainApiBundle/Resources/config/routing.yml"
+    prefix:   /api

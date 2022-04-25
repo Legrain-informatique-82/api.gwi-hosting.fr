@@ -1,0 +1,26 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: api_gwihosting
+    database_user: api_gwihosting
+    database_password: xxxxxxxxxxxxxx
+    mailer_transport: smtp
+    mailer_host: mail.gandi.net
+    mailer_user: appxxxxxxx@gwi-xxxxxxxxxxx.fr
+    mailer_password: pwdlgr010
+    secret: xxxxxxxxxxxxxxxx
+    email_app: app@gwi-hosting.fr
+    stripe_key: sk_live_xxxxxxxxxxxxxxxxx
+    bugzilla.url: 'http://bugs.legrain.fr'
+    bugzilla.api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    id_changelog_gwi: 8
+    id_changelog_gwi_agence_web: 9
+    id_changelog_gwi_utilisateur_agence_web: 10
+    email_gandi_per_default: xxxxxxxxxx@xxxxxx.biz
+    identifiant_gandi_admin: GIXXXXXX-GANDI
+    identifiant_gandi_bill: GIXXXXXXXXXX-GANDI
+    identifiant_gandi_tech: GIXXXXXXXXXXXXX-GANDI
+    wsdl_changelog: 'http://changelog.legrain.fr/ws/changelogApi'
+    email_notification_paiement: paiementxxxxxxxxxxxx@gwi-xxxxxxxxxxx.fr
+    email_notification_inscription: xxxxxxxxx@xxxxxxxxx.biz

@@ -1,0 +1,67 @@
+<html>
+<head>
+
+</head>
+<body>
+<div>
+    <p>Bonjour,</p>
+
+    <p>Ci dessous le détail de la commande concernant :</p>
+
+    <h1>Infos payeur :</h1>
+    <ul>
+	<li>Utilisateur connecté : {{ email }}</li>
+        <li>Code tiers : {{ cart.user.codeClient }}</li>
+        <li>Nom & prénom : {{ cart.user.name }} {{ cart.user.firstname }}</li>
+        <li>Email utilisateur : {{ cart.user.email }}</li>
+        <li>Date du paiement : {{ cart.dateIsPaid |date('d/m/Y') }}</li>
+    </ul>
+    <h1>Détail de la commande :</h1>
+<table>
+    <tfoot>
+    <tr>
+        <td colspan="6">&nbsp;</td>
+        <td>Total HT :</td>
+        <td>{{ cart.totalHt }}€</td>
+    </tr>
+    <tr>
+        <td colspan="6">&nbsp;</td>
+        <td>Total TVA :</td>
+        <td>{{ cart.totalTax }}€</td>
+    </tr>
+    <tr>
+        <td colspan="6">&nbsp;</td>
+        <td>Total TTC :</td>
+        <td>{{ cart.totalTTC }}€</td>
+    </tr>
+    </tfoot>
+    <thead>
+    <tr>
+        <th>Produit</th>
+        <th>prix U ht</th>
+        <th>Quantité</th>
+        <th>HT</th>
+        <th>TVA</th>
+        <th>TTC</th>
+        <th>Qui facturer</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for line in cart.cartLines  %}
+        <tr>
+            <td>{{ line.productName }}</td>
+            <td>{{ line.unitPrice }}€</td>
+            <td>{{ line.quantity }}</td>
+            <td>{{ line.totalHt }}€</td>
+            <td>{{ line.totalTax }}€</td>
+            <td>{{ line.totalHt + line.totalTax }}€</td>
+            <td>{{ line.utilisateurPourLequelEstLeProduit.name }} {{ line.utilisateurPourLequelEstLeProduit.firstname }} (code client : {{ line.utilisateurPourLequelEstLeProduit.codeClient }})</td>
+        </tr>
+
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+</body>
+</html>
